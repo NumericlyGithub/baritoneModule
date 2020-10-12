@@ -18,7 +18,6 @@ public class ScriptActionSetting extends ScriptAction {
         return false;
     }
 
-
     @Override
     public IReturnValue execute(IScriptActionProvider provider, IMacro macro, IMacroAction instance, String rawParams, String[] params) {
         if(params.length == 2) {

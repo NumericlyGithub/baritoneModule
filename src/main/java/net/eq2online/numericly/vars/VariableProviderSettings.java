@@ -23,10 +23,10 @@ public class VariableProviderSettings extends VariableCache {
         this.storeVariable("ALLOWINVENTORY", Boolean.valueOf(baritone.allowInventory.value));
         this.storeVariable("ALLOWWALKONBOTTOMSLAB", Boolean.valueOf(baritone.allowWalkOnBottomSlab.value));
         this.storeVariable("ALLOWWATERBUCKETFALL", Boolean.valueOf(baritone.allowWaterBucketFall.value));
-        this.storeVariable("BLOCKBREAKADDITIONALMENTPENALTY", String.valueOf(Double.valueOf(baritone.blockBreakAdditionalPenalty.value)));
-        this.storeVariable("BLOCKPLACEMENTPENALTY", String.valueOf(Double.valueOf(baritone.blockPlacementPenalty.value)));
-        this.storeVariable("BLOCKREACHDISTANCE", String.valueOf(Float.valueOf(baritone.blockReachDistance.value)));
-        this.storeVariable("MAXFALLHEIGHTNOWATER", String.valueOf(Integer.valueOf(baritone.maxFallHeightNoWater.value)));
+        this.storeVariable("BLOCKBREAKADDITIONALMENTPENALTY", String.valueOf(baritone.blockBreakAdditionalPenalty.value));
+        this.storeVariable("BLOCKPLACEMENTPENALTY", String.valueOf(baritone.blockPlacementPenalty.value));
+        this.storeVariable("BLOCKREACHDISTANCE", String.valueOf(baritone.blockReachDistance.value));
+        this.storeVariable("MAXFALLHEIGHTNOWATER", baritone.maxFallHeightNoWater.value);
         this.storeVariable("FREELOOK", Boolean.valueOf(baritone.freeLook.value));
         this.storeVariable("REPLANTCROPS", Boolean.valueOf(baritone.replantCrops.value));
     }
