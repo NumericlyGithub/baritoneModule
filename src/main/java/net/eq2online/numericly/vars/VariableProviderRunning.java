@@ -16,11 +16,11 @@ public class VariableProviderRunning extends VariableCache {
             return;
         }
         IBaritone baritone = BaritoneAPI.getProvider().getPrimaryBaritone();
-        this.storeVariable("PATHFINDING", baritone.getCustomGoalProcess().isActive());
-        this.storeVariable("FARMING", baritone.getFarmProcess().isActive());
-        this.storeVariable("BUILDING", baritone.getBuilderProcess().isActive());
-        this.storeVariable("FOLLOWING", baritone.getFollowProcess().isActive());
-        this.storeVariable("MINING", baritone.getMineProcess().isActive());
+        this.storeVariable("PATHFINDING",Boolean.valueOf(baritone.getCustomGoalProcess().isActive()));
+        this.storeVariable("FARMING", Boolean.valueOf(baritone.getFarmProcess().isActive()));
+        this.storeVariable("BUILDING", Boolean.valueOf(baritone.getBuilderProcess().isActive()));
+        this.storeVariable("FOLLOWING", Boolean.valueOf(baritone.getFollowProcess().isActive()));
+        this.storeVariable("MINING", Boolean.valueOf(baritone.getMineProcess().isActive()));
         if(baritone.getCustomGoalProcess().isActive()||
                 baritone.getFarmProcess().isActive()||
                 baritone.getBuilderProcess().isActive()||

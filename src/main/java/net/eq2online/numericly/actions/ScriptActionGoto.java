@@ -22,7 +22,9 @@ public class ScriptActionGoto extends ScriptAction {
     @Override
     public IReturnValue execute(IScriptActionProvider provider, IMacro macro, IMacroAction instance, String rawParams, String[] params) {
         if (params.length == 3) {
-            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("goto "+params[0]+" "+params[1]+" "+params[2]);
+            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("goto "+provider.expand(macro,params[0],false)+
+                    " "+provider.expand(macro,params[1],false)+
+                    " "+provider.expand(macro,params[2],false));
         }
         return null;
     }

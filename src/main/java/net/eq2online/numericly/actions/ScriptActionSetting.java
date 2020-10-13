@@ -21,32 +21,34 @@ public class ScriptActionSetting extends ScriptAction {
     @Override
     public IReturnValue execute(IScriptActionProvider provider, IMacro macro, IMacroAction instance, String rawParams, String[] params) {
         if(params.length == 2) {
-            if (params[0].equalsIgnoreCase("allowplace")) {
-                BaritoneAPI.getSettings().allowPlace.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowbreak")) {
-                BaritoneAPI.getSettings().allowBreak.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowsprint")) {
-                BaritoneAPI.getSettings().allowSprint.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowparkour")) {
-                BaritoneAPI.getSettings().allowParkour.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowinventory")) {
-                BaritoneAPI.getSettings().allowInventory.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowwalkonbottomslab")) {
-                BaritoneAPI.getSettings().allowWalkOnBottomSlab.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("allowWaterBucketFall")) {
-                BaritoneAPI.getSettings().allowWaterBucketFall.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("blockBreakAdditionalPenalty")) {
-                BaritoneAPI.getSettings().blockBreakAdditionalPenalty.value = Double.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("blockPlacePenalty")) {
-                BaritoneAPI.getSettings().blockPlacementPenalty.value = Double.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("blockReachDistance")) {
-                BaritoneAPI.getSettings().blockReachDistance.value = Float.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("freelook")) {
-                BaritoneAPI.getSettings().freeLook.value = Boolean.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("maxFallHeightNoWater")) {
-                BaritoneAPI.getSettings().maxFallHeightNoWater.value = Integer.valueOf(params[1]);
-            } else if (params[0].equalsIgnoreCase("replantCrops")) {
-                BaritoneAPI.getSettings().replantCrops.value = Boolean.valueOf(params[1]);
+            if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowplace")) {
+                BaritoneAPI.getSettings().allowPlace.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowbreak")) {
+                BaritoneAPI.getSettings().allowBreak.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowsprint")) {
+                BaritoneAPI.getSettings().allowSprint.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowparkour")) {
+                BaritoneAPI.getSettings().allowParkour.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowinventory")) {
+                BaritoneAPI.getSettings().allowInventory.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowwalkonbottomslab")) {
+                BaritoneAPI.getSettings().allowWalkOnBottomSlab.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("allowWaterBucketFall")) {
+                BaritoneAPI.getSettings().allowWaterBucketFall.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("blockBreakAdditionalPenalty")) {
+                BaritoneAPI.getSettings().blockBreakAdditionalPenalty.value = Double.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("blockPlacePenalty")) {
+                BaritoneAPI.getSettings().blockPlacementPenalty.value = Double.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("blockReachDistance")) {
+                BaritoneAPI.getSettings().blockReachDistance.value = Float.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("freelook")) {
+                BaritoneAPI.getSettings().freeLook.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("maxFallHeightNoWater")) {
+                BaritoneAPI.getSettings().maxFallHeightNoWater.value = Integer.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("replantCrops")) {
+                BaritoneAPI.getSettings().replantCrops.value = Boolean.valueOf(provider.expand(macro,params[1],false));
+            } else if (provider.expand(macro,params[0],false).equalsIgnoreCase("buildInLayers")) {
+                BaritoneAPI.getSettings().buildInLayers.value = Boolean.valueOf(provider.expand(macro,params[1],false));
             }
         }
         return null;
@@ -59,3 +61,5 @@ public class ScriptActionSetting extends ScriptAction {
     }
 
 }
+
+

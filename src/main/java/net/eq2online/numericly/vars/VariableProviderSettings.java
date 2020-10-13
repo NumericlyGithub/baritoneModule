@@ -29,6 +29,7 @@ public class VariableProviderSettings extends VariableCache {
         this.storeVariable("MAXFALLHEIGHTNOWATER", baritone.maxFallHeightNoWater.value);
         this.storeVariable("FREELOOK", Boolean.valueOf(baritone.freeLook.value));
         this.storeVariable("REPLANTCROPS", Boolean.valueOf(baritone.replantCrops.value));
+        this.storeVariable("BUILDINLAYERS", Boolean.valueOf(baritone.buildInLayers.value));
     }
 
     @Override

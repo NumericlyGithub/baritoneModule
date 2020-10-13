@@ -22,7 +22,8 @@ public class ScriptActionSelReplace extends ScriptAction {
     @Override
     public IReturnValue execute(IScriptActionProvider provider, IMacro macro, IMacroAction instance, String rawParams, String[] params) {
         if (params.length == 2) {
-            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("sel r "+params[0]+" "+params[1]);
+            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("sel r "+provider.expand(macro,params[0],false)+
+                    " "+provider.expand(macro,params[1],false));
         }
         return null;
     }

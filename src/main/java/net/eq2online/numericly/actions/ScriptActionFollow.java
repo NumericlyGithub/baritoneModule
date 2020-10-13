@@ -24,11 +24,11 @@ public class ScriptActionFollow extends ScriptAction {
         if (params[0].equalsIgnoreCase("entities")&&params.length == 1) {
             BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow entities");
         } else if (params[0].equalsIgnoreCase("entity")&&params.length == 2) {
-            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow entity "+params[1]);
+            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow entity "+provider.expand(macro,params[1],false));
         } else if (params[0].equalsIgnoreCase("players")&&params.length == 1) {
             BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow players");
         } else if (params[0].equalsIgnoreCase("player")&&params.length == 1) {
-            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow "+params[1]);
+            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("follow "+provider.expand(macro,params[1],false));
         }
         return null;
     }

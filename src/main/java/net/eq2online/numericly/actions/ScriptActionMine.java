@@ -22,7 +22,7 @@ public class ScriptActionMine extends ScriptAction {
     @Override
     public IReturnValue execute(IScriptActionProvider provider, IMacro macro, IMacroAction instance, String rawParams, String[] params) {
         if (params.length == 1) {
-            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("mine "+params[0]);
+            BaritoneAPI.getProvider().getPrimaryBaritone().getCommandManager().execute("mine "+provider.expand(macro,params[0],false));
         }
         return null;
     }
